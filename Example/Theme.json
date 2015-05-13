@@ -1,0 +1,18 @@
+{
+    ".Container": {
+        "backgroundColor": "lightblue",
+        "cellClass": ".Child",
+        "padding": {
+            "top": 20
+        },
+        "direction": "column",
+        "childAlignment": "stretch"
+    },
+    ".Child": {
+        "backgroundColor": "blue",
+        "layoutStrategy": 50,
+        "margin": {
+            "top": 1
+        }
+    }
+}
