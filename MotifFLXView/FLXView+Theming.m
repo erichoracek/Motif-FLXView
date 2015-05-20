@@ -8,7 +8,7 @@
 
 @import Motif;
 
-#import "NSValueTransformer+MotifFLXView.h"
+#import "NSValueTransformer+MotifFLXPadding.h"
 #import "NSObject+SetValueFromKeyword.h"
 
 #import "FLXView+Theming.h"
