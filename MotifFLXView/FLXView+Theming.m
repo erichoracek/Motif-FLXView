@@ -61,18 +61,16 @@
         mtf_registerThemeProperty:@"padding"
         valueTransformerName:MTFFLXPaddingFromDictionaryTransformerName
         applierBlock:^(NSValue *value, UIView *view){
-            [view
-                setValue:value
-                forKey:NSStringFromSelector(@selector(padding))];
+            NSString *key = NSStringFromSelector(@selector(padding));
+            [view setValue:value forKey:key];
         }];
 
     [self
         mtf_registerThemeProperty:@"padding"
         valueTransformerName:MTFFLXPaddingFromArrayTransformerName
         applierBlock:^(NSValue *value, UIView *view){
-            [view
-                setValue:value
-                forKey:NSStringFromSelector(@selector(padding))];
+            NSString *key = NSStringFromSelector(@selector(padding));
+            [view setValue:value forKey:key];
         }];
 
     [self
