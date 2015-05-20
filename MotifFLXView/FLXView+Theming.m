@@ -9,7 +9,6 @@
 @import Motif;
 
 #import "NSValueTransformer+MotifFLXPadding.h"
-#import "NSObject+SetValueFromKeyword.h"
 
 #import "FLXView+Theming.h"
 
@@ -18,7 +17,7 @@
 + (void)load {
     [self
         mtf_registerThemeProperty:@"direction"
-        forKey:NSStringFromSelector(@selector(direction))
+        forKeyPath:NSStringFromSelector(@selector(direction))
         withValuesByKeyword:@{
            @"column": @(FLXDirectionColumn),
            @"row": @(FLXDirectionRow)
@@ -26,7 +25,7 @@
 
     [self
         mtf_registerThemeProperty:@"childAlignment"
-        forKey:NSStringFromSelector(@selector(childAlignment))
+        forKeyPath:NSStringFromSelector(@selector(childAlignment))
         withValuesByKeyword:@{
            @"start": @(FLXChildAlignmentStart),
            @"center": @(FLXChildAlignmentCenter),
@@ -36,7 +35,7 @@
 
     [self
         mtf_registerThemeProperty:@"justification"
-        forKey:NSStringFromSelector(@selector(justification))
+        forKeyPath:NSStringFromSelector(@selector(justification))
         withValuesByKeyword:@{
            @"start": @(FLXJustificationStart),
            @"center": @(FLXJustificationCenter),

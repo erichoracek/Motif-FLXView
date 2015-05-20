@@ -9,7 +9,6 @@
 @import Motif;
 @import FLXView;
 
-#import "NSObject+SetValueFromKeyword.h"
 #import "NSValueTransformer+MotifFLXLayoutStrategy.h"
 #import "NSValueTransformer+MotifFLXMargins.h"
 
@@ -128,7 +127,7 @@
 
     [self
         mtf_registerThemeProperty:@"selfAlignment"
-        forKey:NSStringFromSelector(@selector(flx_selfAlignment))
+        forKeyPath:NSStringFromSelector(@selector(flx_selfAlignment))
         withValuesByKeyword:@{
            @"auto": @(FLXSelfAlignmentAuto),
            @"start": @(FLXSelfAlignmentStart),
