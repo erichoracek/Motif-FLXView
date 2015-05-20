@@ -5,14 +5,14 @@
         "padding": {
             "top": 20
         },
-        "childAlignment": "stretch",
-        "direction": "column",
-        "wrap": false,
-        "numberOfChildren": 10
+        "childAlignment": "start",
+        "direction": "row",
+        "wrap": true,
+        "numberOfChildren": 50
     },
     ".Child": {
         "backgroundColor": "blue",
-        "layoutStrategy": 44,
-        "marginTop": 1
+        "layoutStrategy": 50,
+        "margins": 1
     }
 }
