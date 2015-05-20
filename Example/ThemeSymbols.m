@@ -6,15 +6,17 @@ NSString * const ThemeName = @"Theme";
 
 const struct ThemeClassNames ThemeClassNames = {
     .Child = @"Child",
-    .Container = @"Container",
+    .Parent = @"Parent",
 };
 
 const struct ThemeProperties ThemeProperties = {
     .backgroundColor = @"backgroundColor",
-    .cellClass = @"cellClass",
     .childAlignment = @"childAlignment",
+    .childClass = @"childClass",
     .direction = @"direction",
     .layoutStrategy = @"layoutStrategy",
-    .margin = @"margin",
+    .margins = @"margins",
+    .numberOfChildren = @"numberOfChildren",
     .padding = @"padding",
+    .wrap = @"wrap",
 };

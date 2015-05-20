@@ -1,18 +1,18 @@
 {
-    ".Container": {
+    ".Parent": {
         "backgroundColor": "lightblue",
-        "cellClass": ".Child",
+        "childClass": ".Child",
         "padding": {
             "top": 20
         },
+        "childAlignment": "stretch",
         "direction": "column",
-        "childAlignment": "stretch"
+        "wrap": false,
+        "numberOfChildren": 10
     },
     ".Child": {
         "backgroundColor": "blue",
-        "layoutStrategy": 50,
-        "margin": {
-            "top": 1
-        }
+        "layoutStrategy": 44,
+        "marginTop": 1
     }
 }

@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.themeApplier applyClassWithName:ThemeClassNames.Container toObject:self.view];
+    [self.themeApplier applyClassWithName:ThemeClassNames.Parent toObject:self.view];
 }
 
 @end

@@ -20,30 +20,46 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation View
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self == nil) return nil;
+@synthesize childClass = _childClass;
 
-    NSMutableArray *childViews = [[NSMutableArray alloc] init];
-    for (NSUInteger index = 0; index < 10; index++) {
-        [childViews addObject:[[UIView alloc] init]];
+- (void)setChildClass:(MTFThemeClass * __nullable)childClass {
+    BOOL shouldAnimate = _childClass != nil;
+
+    _childClass = childClass;
+
+    for (UIView *childView in self.childViews) {
+        [childClass applyToObject:childView];
+    }
+
+    if (shouldAnimate) {
+        [UIView animateWithDuration:0.3 animations:^{
+            [self layoutIfNeeded];
+        }];
+    }
+}
+
+- (void)setNumberOfChildren:(NSInteger)numberOfChildren {
+    if (_numberOfChildren == numberOfChildren) {
+        return;
+    }
+
+    _numberOfChildren = numberOfChildren;
+
+    for (UIView *view in self.childViews) {
+        [view removeFromSuperview];
+    }
+
+    NSMutableArray *childViews = [NSMutableArray array];
+    for (NSUInteger index = 0; index < numberOfChildren; index++) {
+        UIView *view = [[UIView alloc] init];
+        [childViews addObject:view];
     }
     _childViews = [childViews copy];
 
     for (UIView *childView in self.childViews) {
         [self addSubview:childView];
-    }
 
-    return self;
-}
-
-@synthesize childClass = _childClass;
-
-- (void)setChildClass:(MTFThemeClass * __nullable)childClass {
-    _childClass = childClass;
-    
-    for (UIView *childView in self.childViews) {
-        [childClass applyToObject:childView];
+        [self.childClass applyToObject:childView];
     }
 }
 

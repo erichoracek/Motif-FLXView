@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readwrite, nonatomic, strong, nullable) MTFThemeClass *childClass;
 
+@property (readwrite, nonatomic, assign) NSInteger numberOfChildren;
+
 @end
 
 NS_ASSUME_NONNULL_END
