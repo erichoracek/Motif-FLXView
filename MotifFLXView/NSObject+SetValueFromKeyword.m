@@ -21,10 +21,10 @@
 
             NSAssert(
                 value != nil,
-                @"Invalid %@ value: '%@', must be one of %@.",
+                @"Invalid %@ value: '%@', must be one of: %@.",
                 key,
                 keyword,
-                valuesByKeyword.allKeys);
+                [valuesByKeyword.allKeys componentsJoinedByString:@", "]);
 
             [objectToTheme setValue:value forKey:key];
         }];
