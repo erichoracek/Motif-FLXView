@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A3D20461B06F9E800224121 /* NSValueTransformer+MotifFLXView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A3D20441B06F9E800224121 /* NSValueTransformer+MotifFLXView.h */; };
-		3A3D20471B06F9E800224121 /* NSValueTransformer+MotifFLXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D20451B06F9E800224121 /* NSValueTransformer+MotifFLXView.m */; };
 		3A3D204C1B0814A900224121 /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3D20481B08149B00224121 /* Specta.framework */; };
 		3A3D204D1B0814A900224121 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3D20491B08149B00224121 /* Expecta.framework */; };
 		3A3D204F1B0814CE00224121 /* Specta.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3D20481B08149B00224121 /* Specta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -42,6 +40,13 @@
 		3A9082741B054A0F00CF07AD /* UIView+FLXViewTheming.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9082721B054A0F00CF07AD /* UIView+FLXViewTheming.m */; };
 		3AB4DB911B03D7AE0057C995 /* NSObject+SetValueFromKeyword.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB4DB8F1B03D7AE0057C995 /* NSObject+SetValueFromKeyword.h */; };
 		3AB4DB921B03D7AE0057C995 /* NSObject+SetValueFromKeyword.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4DB901B03D7AE0057C995 /* NSObject+SetValueFromKeyword.m */; };
+		3ADECD5F1B0C3D30008B7AF6 /* NSValueTransformer+MotifFLXLayoutStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ADECD5D1B0C3D30008B7AF6 /* NSValueTransformer+MotifFLXLayoutStrategy.h */; };
+		3ADECD601B0C3D30008B7AF6 /* NSValueTransformer+MotifFLXLayoutStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADECD5E1B0C3D30008B7AF6 /* NSValueTransformer+MotifFLXLayoutStrategy.m */; };
+		3ADECD631B0C3D5C008B7AF6 /* NSValueTransformer+MotifFLXMargins.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ADECD611B0C3D5C008B7AF6 /* NSValueTransformer+MotifFLXMargins.h */; };
+		3ADECD641B0C3D5C008B7AF6 /* NSValueTransformer+MotifFLXMargins.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADECD621B0C3D5C008B7AF6 /* NSValueTransformer+MotifFLXMargins.m */; };
+		3ADECD671B0C3E7B008B7AF6 /* NSValueTransformer+MotifFLXPadding.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ADECD651B0C3E7B008B7AF6 /* NSValueTransformer+MotifFLXPadding.h */; };
+		3ADECD681B0C3E7B008B7AF6 /* NSValueTransformer+MotifFLXPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADECD661B0C3E7B008B7AF6 /* NSValueTransformer+MotifFLXPadding.m */; };
+		3ADECD6A1B0C42D8008B7AF6 /* FLXLayoutStrategySpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADECD691B0C42D8008B7AF6 /* FLXLayoutStrategySpecs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +98,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A3D20441B06F9E800224121 /* NSValueTransformer+MotifFLXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+MotifFLXView.h"; sourceTree = "<group>"; };
-		3A3D20451B06F9E800224121 /* NSValueTransformer+MotifFLXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MotifFLXView.m"; sourceTree = "<group>"; };
 		3A3D20481B08149B00224121 /* Specta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Specta.framework; path = Carthage/Build/iOS/Specta.framework; sourceTree = "<group>"; };
 		3A3D20491B08149B00224121 /* Expecta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Expecta.framework; path = Carthage/Build/iOS/Expecta.framework; sourceTree = "<group>"; };
 		3A3D20541B08150C00224121 /* FLXViewPaddingSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXViewPaddingSpecs.m; sourceTree = "<group>"; };
@@ -127,6 +130,13 @@
 		3A9082721B054A0F00CF07AD /* UIView+FLXViewTheming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLXViewTheming.m"; sourceTree = "<group>"; };
 		3AB4DB8F1B03D7AE0057C995 /* NSObject+SetValueFromKeyword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SetValueFromKeyword.h"; sourceTree = "<group>"; };
 		3AB4DB901B03D7AE0057C995 /* NSObject+SetValueFromKeyword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SetValueFromKeyword.m"; sourceTree = "<group>"; };
+		3ADECD5D1B0C3D30008B7AF6 /* NSValueTransformer+MotifFLXLayoutStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+MotifFLXLayoutStrategy.h"; sourceTree = "<group>"; };
+		3ADECD5E1B0C3D30008B7AF6 /* NSValueTransformer+MotifFLXLayoutStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MotifFLXLayoutStrategy.m"; sourceTree = "<group>"; };
+		3ADECD611B0C3D5C008B7AF6 /* NSValueTransformer+MotifFLXMargins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+MotifFLXMargins.h"; sourceTree = "<group>"; };
+		3ADECD621B0C3D5C008B7AF6 /* NSValueTransformer+MotifFLXMargins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MotifFLXMargins.m"; sourceTree = "<group>"; };
+		3ADECD651B0C3E7B008B7AF6 /* NSValueTransformer+MotifFLXPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+MotifFLXPadding.h"; sourceTree = "<group>"; };
+		3ADECD661B0C3E7B008B7AF6 /* NSValueTransformer+MotifFLXPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MotifFLXPadding.m"; sourceTree = "<group>"; };
+		3ADECD691B0C42D8008B7AF6 /* FLXLayoutStrategySpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXLayoutStrategySpecs.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,8 +232,12 @@
 				3A9082721B054A0F00CF07AD /* UIView+FLXViewTheming.m */,
 				3AB4DB8F1B03D7AE0057C995 /* NSObject+SetValueFromKeyword.h */,
 				3AB4DB901B03D7AE0057C995 /* NSObject+SetValueFromKeyword.m */,
-				3A3D20441B06F9E800224121 /* NSValueTransformer+MotifFLXView.h */,
-				3A3D20451B06F9E800224121 /* NSValueTransformer+MotifFLXView.m */,
+				3ADECD651B0C3E7B008B7AF6 /* NSValueTransformer+MotifFLXPadding.h */,
+				3ADECD661B0C3E7B008B7AF6 /* NSValueTransformer+MotifFLXPadding.m */,
+				3ADECD611B0C3D5C008B7AF6 /* NSValueTransformer+MotifFLXMargins.h */,
+				3ADECD621B0C3D5C008B7AF6 /* NSValueTransformer+MotifFLXMargins.m */,
+				3ADECD5D1B0C3D30008B7AF6 /* NSValueTransformer+MotifFLXLayoutStrategy.h */,
+				3ADECD5E1B0C3D30008B7AF6 /* NSValueTransformer+MotifFLXLayoutStrategy.m */,
 				3A4F886B1B03A2CF009B2917 /* Supporting Files */,
 			);
 			path = MotifFLXView;
@@ -240,9 +254,10 @@
 		3A4F88771B03A2CF009B2917 /* MotifFLXViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				3A4F88781B03A2CF009B2917 /* Supporting Files */,
 				3A3D20541B08150C00224121 /* FLXViewPaddingSpecs.m */,
 				3A3D20561B09C3E700224121 /* FLXViewMarginsSpecs.m */,
+				3ADECD691B0C42D8008B7AF6 /* FLXLayoutStrategySpecs.m */,
+				3A4F88781B03A2CF009B2917 /* Supporting Files */,
 			);
 			path = MotifFLXViewTests;
 			sourceTree = "<group>";
@@ -275,9 +290,11 @@
 			files = (
 				3A4F886E1B03A2CF009B2917 /* MotifFLXView.h in Headers */,
 				3AB4DB911B03D7AE0057C995 /* NSObject+SetValueFromKeyword.h in Headers */,
-				3A3D20461B06F9E800224121 /* NSValueTransformer+MotifFLXView.h in Headers */,
 				3A9082731B054A0F00CF07AD /* UIView+FLXViewTheming.h in Headers */,
+				3ADECD631B0C3D5C008B7AF6 /* NSValueTransformer+MotifFLXMargins.h in Headers */,
 				3A4F888B1B03D166009B2917 /* FLXView+Theming.h in Headers */,
+				3ADECD671B0C3E7B008B7AF6 /* NSValueTransformer+MotifFLXPadding.h in Headers */,
+				3ADECD5F1B0C3D30008B7AF6 /* NSValueTransformer+MotifFLXLayoutStrategy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,10 +458,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A3D20471B06F9E800224121 /* NSValueTransformer+MotifFLXView.m in Sources */,
+				3ADECD681B0C3E7B008B7AF6 /* NSValueTransformer+MotifFLXPadding.m in Sources */,
 				3A9082741B054A0F00CF07AD /* UIView+FLXViewTheming.m in Sources */,
 				3AB4DB921B03D7AE0057C995 /* NSObject+SetValueFromKeyword.m in Sources */,
 				3A4F888C1B03D166009B2917 /* FLXView+Theming.m in Sources */,
+				3ADECD601B0C3D30008B7AF6 /* NSValueTransformer+MotifFLXLayoutStrategy.m in Sources */,
+				3ADECD641B0C3D5C008B7AF6 /* NSValueTransformer+MotifFLXMargins.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3D20571B09C3E700224121 /* FLXViewMarginsSpecs.m in Sources */,
+				3ADECD6A1B0C42D8008B7AF6 /* FLXLayoutStrategySpecs.m in Sources */,
 				3A3D20551B08150C00224121 /* FLXViewPaddingSpecs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
