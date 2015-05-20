@@ -254,9 +254,7 @@
 		3A4F88771B03A2CF009B2917 /* MotifFLXViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				3A3D20541B08150C00224121 /* FLXViewPaddingSpecs.m */,
-				3A3D20561B09C3E700224121 /* FLXViewMarginsSpecs.m */,
-				3ADECD691B0C42D8008B7AF6 /* FLXLayoutStrategySpecs.m */,
+				3ADECD6B1B0C4BC4008B7AF6 /* Specs */,
 				3A4F88781B03A2CF009B2917 /* Supporting Files */,
 			);
 			path = MotifFLXViewTests;
@@ -279,6 +277,16 @@
 				3A4F88841B03D067009B2917 /* FLXView.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3ADECD6B1B0C4BC4008B7AF6 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				3A3D20541B08150C00224121 /* FLXViewPaddingSpecs.m */,
+				3A3D20561B09C3E700224121 /* FLXViewMarginsSpecs.m */,
+				3ADECD691B0C42D8008B7AF6 /* FLXLayoutStrategySpecs.m */,
+			);
+			name = Specs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
