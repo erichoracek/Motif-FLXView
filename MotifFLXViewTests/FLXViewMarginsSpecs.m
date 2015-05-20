@@ -11,13 +11,14 @@
 @import MotifFLXView;
 
 SpecBegin(FLXViewMarginsSpecs)
-describe(@"applying margins to an FLXView", ^{
+
+describe(@"applying margins to a UIView", ^{
     __block NSError *error;
-    __block FLXView *view;
+    __block UIView *view;
 
     beforeEach(^{
         error = nil;
-        view = [[FLXView alloc] init];
+        view = [[UIView alloc] init];
     });
 
     afterEach(^{
@@ -39,10 +40,10 @@ describe(@"applying margins to an FLXView", ^{
                 @"margins": @(1)
             });
 
-            expect(view.flx_margins.top).to.equal(1.0f);
-            expect(view.flx_margins.bottom).to.equal(1.0f);
-            expect(view.flx_margins.left).to.equal(1.0f);
-            expect(view.flx_margins.right).to.equal(1.0f);
+            expect(view.flx_margins.top).to.beCloseTo(1.0f);
+            expect(view.flx_margins.bottom).to.beCloseTo(1.0f);
+            expect(view.flx_margins.left).to.beCloseTo(1.0f);
+            expect(view.flx_margins.right).to.beCloseTo(1.0f);
         });
     });
 
@@ -52,10 +53,10 @@ describe(@"applying margins to an FLXView", ^{
                 @"margins": @[@1, @2, @3, @4]
             });
 
-            expect(view.flx_margins.top).to.equal(1.0f);
-            expect(view.flx_margins.right).to.equal(2.0f);
-            expect(view.flx_margins.bottom).to.equal(3.0f);
-            expect(view.flx_margins.left).to.equal(4.0f);
+            expect(view.flx_margins.top).to.beCloseTo(1.0f);
+            expect(view.flx_margins.right).to.beCloseTo(2.0f);
+            expect(view.flx_margins.bottom).to.beCloseTo(3.0f);
+            expect(view.flx_margins.left).to.beCloseTo(4.0f);
         });
 
         it(@"should apply from an array with three elements", ^{
@@ -63,10 +64,10 @@ describe(@"applying margins to an FLXView", ^{
                 @"margins": @[@1, @2, @3]
             });
 
-            expect(view.flx_margins.top).to.equal(1.0f);
-            expect(view.flx_margins.right).to.equal(2.0f);
-            expect(view.flx_margins.bottom).to.equal(3.0f);
-            expect(view.flx_margins.left).to.equal(0.0f);
+            expect(view.flx_margins.top).to.beCloseTo(1.0f);
+            expect(view.flx_margins.right).to.beCloseTo(2.0f);
+            expect(view.flx_margins.bottom).to.beCloseTo(3.0f);
+            expect(view.flx_margins.left).to.beCloseTo(0.0f);
         });
 
         it(@"should apply from an array with two elements", ^{
@@ -74,10 +75,10 @@ describe(@"applying margins to an FLXView", ^{
                 @"margins": @[@1, @2]
             });
 
-            expect(view.flx_margins.top).to.equal(1.0f);
-            expect(view.flx_margins.right).to.equal(2.0f);
-            expect(view.flx_margins.bottom).to.equal(1.0f);
-            expect(view.flx_margins.left).to.equal(2.0f);
+            expect(view.flx_margins.top).to.beCloseTo(1.0f);
+            expect(view.flx_margins.right).to.beCloseTo(2.0f);
+            expect(view.flx_margins.bottom).to.beCloseTo(1.0f);
+            expect(view.flx_margins.left).to.beCloseTo(2.0f);
         });
 
         it(@"should throw an exception from an array with more than four elements", ^{
@@ -116,10 +117,10 @@ describe(@"applying margins to an FLXView", ^{
                 }
             });
 
-            expect(view.flx_margins.top).to.equal(1.0f);
-            expect(view.flx_margins.right).to.equal(2.0f);
-            expect(view.flx_margins.bottom).to.equal(3.0f);
-            expect(view.flx_margins.left).to.equal(4.0f);
+            expect(view.flx_margins.top).to.beCloseTo(1.0f);
+            expect(view.flx_margins.right).to.beCloseTo(2.0f);
+            expect(view.flx_margins.bottom).to.beCloseTo(3.0f);
+            expect(view.flx_margins.left).to.beCloseTo(4.0f);
         });
 
         it(@"should throw an exception with an invalid property name", ^{
@@ -152,10 +153,10 @@ describe(@"applying margins to an FLXView", ^{
                 @"marginLeft": @4
             });
 
-            expect(view.flx_margins.top).to.equal(1.0f);
-            expect(view.flx_margins.right).to.equal(2.0f);
-            expect(view.flx_margins.bottom).to.equal(3.0f);
-            expect(view.flx_margins.left).to.equal(4.0f);
+            expect(view.flx_margins.top).to.beCloseTo(1.0f);
+            expect(view.flx_margins.right).to.beCloseTo(2.0f);
+            expect(view.flx_margins.bottom).to.beCloseTo(3.0f);
+            expect(view.flx_margins.left).to.beCloseTo(4.0f);
         });
     });
 });

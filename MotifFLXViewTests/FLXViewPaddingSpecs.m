@@ -11,6 +11,7 @@
 @import MotifFLXView;
 
 SpecBegin(FLXViewPaddingSpecs)
+
 describe(@"applying padding to an FLXView", ^{
     __block NSError *error;
     __block FLXView *view;
@@ -39,10 +40,10 @@ describe(@"applying padding to an FLXView", ^{
                 @"padding": @(1)
             });
 
-            expect(view.padding.top).to.equal(1.0f);
-            expect(view.padding.bottom).to.equal(1.0f);
-            expect(view.padding.left).to.equal(1.0f);
-            expect(view.padding.right).to.equal(1.0f);
+            expect(view.padding.top).to.beCloseTo(1.0f);
+            expect(view.padding.bottom).to.beCloseTo(1.0f);
+            expect(view.padding.left).to.beCloseTo(1.0f);
+            expect(view.padding.right).to.beCloseTo(1.0f);
         });
     });
 
@@ -52,10 +53,10 @@ describe(@"applying padding to an FLXView", ^{
                 @"padding": @[@1, @2, @3, @4]
             });
 
-            expect(view.padding.top).to.equal(1.0f);
-            expect(view.padding.right).to.equal(2.0f);
-            expect(view.padding.bottom).to.equal(3.0f);
-            expect(view.padding.left).to.equal(4.0f);
+            expect(view.padding.top).to.beCloseTo(1.0f);
+            expect(view.padding.right).to.beCloseTo(2.0f);
+            expect(view.padding.bottom).to.beCloseTo(3.0f);
+            expect(view.padding.left).to.beCloseTo(4.0f);
         });
 
         it(@"should apply from an array with three elements", ^{
@@ -63,10 +64,10 @@ describe(@"applying padding to an FLXView", ^{
                 @"padding": @[@1, @2, @3]
             });
 
-            expect(view.padding.top).to.equal(1.0f);
-            expect(view.padding.right).to.equal(2.0f);
-            expect(view.padding.bottom).to.equal(3.0f);
-            expect(view.padding.left).to.equal(0.0f);
+            expect(view.padding.top).to.beCloseTo(1.0f);
+            expect(view.padding.right).to.beCloseTo(2.0f);
+            expect(view.padding.bottom).to.beCloseTo(3.0f);
+            expect(view.padding.left).to.beCloseTo(0.0f);
         });
 
         it(@"should apply from an array with two elements", ^{
@@ -74,10 +75,10 @@ describe(@"applying padding to an FLXView", ^{
                 @"padding": @[@1, @2]
             });
 
-            expect(view.padding.top).to.equal(1.0f);
-            expect(view.padding.right).to.equal(2.0f);
-            expect(view.padding.bottom).to.equal(1.0f);
-            expect(view.padding.left).to.equal(2.0f);
+            expect(view.padding.top).to.beCloseTo(1.0f);
+            expect(view.padding.right).to.beCloseTo(2.0f);
+            expect(view.padding.bottom).to.beCloseTo(1.0f);
+            expect(view.padding.left).to.beCloseTo(2.0f);
         });
 
         it(@"should throw an exception from an array with more than four elements", ^{
@@ -116,10 +117,10 @@ describe(@"applying padding to an FLXView", ^{
                 }
             });
 
-            expect(view.padding.top).to.equal(1.0f);
-            expect(view.padding.right).to.equal(2.0f);
-            expect(view.padding.bottom).to.equal(3.0f);
-            expect(view.padding.left).to.equal(4.0f);
+            expect(view.padding.top).to.beCloseTo(1.0f);
+            expect(view.padding.right).to.beCloseTo(2.0f);
+            expect(view.padding.bottom).to.beCloseTo(3.0f);
+            expect(view.padding.left).to.beCloseTo(4.0f);
         });
 
         it(@"should throw an exception with an invalid property name", ^{
@@ -152,10 +153,10 @@ describe(@"applying padding to an FLXView", ^{
                 @"paddingLeft": @4
             });
 
-            expect(view.padding.top).to.equal(1.0f);
-            expect(view.padding.right).to.equal(2.0f);
-            expect(view.padding.bottom).to.equal(3.0f);
-            expect(view.padding.left).to.equal(4.0f);
+            expect(view.padding.top).to.beCloseTo(1.0f);
+            expect(view.padding.right).to.beCloseTo(2.0f);
+            expect(view.padding.bottom).to.beCloseTo(3.0f);
+            expect(view.padding.left).to.beCloseTo(4.0f);
         });
     });
 });
