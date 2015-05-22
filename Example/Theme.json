@@ -3,16 +3,21 @@
         "backgroundColor": "lightblue",
         "childClass": ".Child",
         "padding": {
-            "top": 20
+            "top": 20,
+            "left": 10,
+            "right": 10,
+            "bottom": 10,
         },
-        "childAlignment": "start",
         "direction": "row",
         "wrap": true,
-        "numberOfChildren": 50
+        "numberOfChildren": 2
     },
     ".Child": {
         "backgroundColor": "blue",
-        "layoutStrategy": 50,
-        "margins": 1
+        "layoutStrategy": {
+            "width": "(containerWidth * 0.5) - 30"
+        },
+        "selfAlignment": "stretch",
+        "margins": 10
     }
 }

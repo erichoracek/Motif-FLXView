@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
-- (void)setNumberOfChildren:(NSInteger)numberOfChildren {
+- (void)setNumberOfChildren:(NSUInteger)numberOfChildren {
     if (_numberOfChildren == numberOfChildren) {
         return;
     }

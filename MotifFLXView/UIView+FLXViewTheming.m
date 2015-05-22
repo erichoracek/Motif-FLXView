@@ -26,17 +26,6 @@
 
     [self
         mtf_registerThemeProperty:@"layoutStrategy"
-        requiringValueOfClass:NSString.class
-        applierBlock:^(NSString *value, UIView *view){
-            if ([value isEqualToString:@"sizeToFit"]) {
-                view.flx_layoutStrategy = [FLXLayoutStrategy sizeToFit];
-            } else {
-                NSAssert(NO, @"Invalid layout strategy value %@", value);
-            }
-        }];
-
-    [self
-        mtf_registerThemeProperty:@"layoutStrategy"
         requiringValueOfClass:NSNumber.class
         applierBlock:^(NSNumber *value, UIView *view){
             view.flx_layoutStrategy = [FLXLayoutStrategy fixed:(CGSize){
@@ -44,11 +33,19 @@
                 .height = value.floatValue
             }];
         }];
+        
+    [self
+        mtf_registerThemeProperty:@"layoutStrategy"
+        valueTransformerName:MTFFLXLayoutStrategyFromStringTransformerName
+        applierBlock:^(FLXLayoutStrategy *value, UIView *view){
+            NSString *key = NSStringFromSelector(@selector(flx_layoutStrategy));
+            [view setValue:value forKey:key];
+        }];
 
     [self
         mtf_registerThemeProperty:@"layoutStrategy"
         valueTransformerName:MTFFLXLayoutStrategyFromArrayTransformerName
-        applierBlock:^(NSArray *value, UIView *view){
+        applierBlock:^(FLXLayoutStrategy *value, UIView *view){
             NSString *key = NSStringFromSelector(@selector(flx_layoutStrategy));
             [view setValue:value forKey:key];
         }];
@@ -56,7 +53,7 @@
     [self
         mtf_registerThemeProperty:@"layoutStrategy"
         valueTransformerName:MTFFLXLayoutStrategyFromDictionaryTransformerName
-        applierBlock:^(NSDictionary *value, UIView *view){
+        applierBlock:^(FLXLayoutStrategy *value, UIView *view){
             NSString *key = NSStringFromSelector(@selector(flx_layoutStrategy));
             [view setValue:value forKey:key];
         }];

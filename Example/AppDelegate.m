@@ -36,7 +36,9 @@
     MTFTheme *theme = [MTFTheme themeFromJSONThemeNamed:ThemeName error:&error];
     NSAssert(error == nil, @"Error loading theme %@", error);
 
-    MTFLiveReloadThemeApplier *themeApplier = [[MTFLiveReloadThemeApplier alloc] initWithTheme:theme sourceFile:__FILE__];
+    MTFLiveReloadThemeApplier *themeApplier = [[MTFLiveReloadThemeApplier alloc]
+        initWithTheme:theme
+        sourceFile:__FILE__];
 
     return themeApplier;
 }

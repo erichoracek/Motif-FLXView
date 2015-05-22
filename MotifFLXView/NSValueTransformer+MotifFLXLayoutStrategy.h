@@ -13,13 +13,19 @@
 @end
 
 /**
+ The name of the value transformer responsible for transforming an NSString to
+ an FLXLayoutStrategy.
+ */
+extern NSString * const MTFFLXLayoutStrategyFromStringTransformerName;
+
+/**
  The name of the value transformer responsible for transforming an NSArray to
- a NSValue wrapping a FLXPadding struct.
+ an FLXLayoutStrategy.
  */
 extern NSString * const MTFFLXLayoutStrategyFromArrayTransformerName;
 
 /**
  The name of the value transformer responsible for transforming an NSDictionary
- to a NSValue wrapping a FLXPadding struct.
+ to an FLXLayoutStrategy.
  */
 extern NSString * const MTFFLXLayoutStrategyFromDictionaryTransformerName;

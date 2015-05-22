@@ -11,9 +11,23 @@
 
 #import "NSValueTransformer+MotifFLXLayoutStrategy.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @implementation NSValueTransformer (MotifFLXLayoutStrategy)
 
 + (void)load {
+    [self
+        mtf_registerValueTransformerWithName:MTFFLXLayoutStrategyFromStringTransformerName
+        transformedValueClass:FLXLayoutStrategy.class
+        reverseTransformedValueClass:NSString.class
+        returningTransformedValueWithBlock:^(NSString *value) {
+            if ([value isEqual:@"sizeToFit"]) {
+                return [FLXLayoutStrategy sizeToFit];
+            }
+
+            return [self layoutStrategyForValues:@[value, value]];
+        }];
+
     [self
         mtf_registerValueTransformerWithName:MTFFLXLayoutStrategyFromArrayTransformerName
         transformedValueClass:FLXLayoutStrategy.class
@@ -21,16 +35,7 @@
         returningTransformedValueWithBlock:^(NSArray *values) {
             NSAssert(values.count == 2, @"Layout strategy array must have two values");
 
-            for (id value in values) {
-                NSAssert(
-                    [value isKindOfClass:NSNumber.class],
-                    @"Layout strategy array values must be kind of class NSNumber");
-            }
-
-            return [FLXLayoutStrategy fixed:(CGSize){
-                .width = [values[0] floatValue],
-                .height = [values[1] floatValue]
-            }];
+            return [self layoutStrategyForValues:@[values[0], values[1]]];
         }];
 
     [self
@@ -38,12 +43,6 @@
         transformedValueClass:FLXLayoutStrategy.class
         reverseTransformedValueClass:NSDictionary.class
         returningTransformedValueWithBlock:^(NSDictionary *values) {
-            for (id value in [values objectEnumerator]) {
-                NSAssert(
-                    [value isKindOfClass:NSNumber.class],
-                    @"Layout strategy dictionary values must be of type NSNumber");
-            }
-
             NSArray *validProperties = @[@"width", @"height"];
             NSMutableSet *passedInvalidPropertyNames = [NSMutableSet setWithArray:values.allKeys];
             [passedInvalidPropertyNames minusSet:[NSSet setWithArray:validProperties]];
@@ -52,15 +51,49 @@
                 @"Invalid layout strategy property names: %@",
                 passedInvalidPropertyNames);
 
-            return [FLXLayoutStrategy fixed:(CGSize){
-                .width = [values[validProperties[0]] floatValue],
-                .height = [values[validProperties[1]] floatValue]
-            }];
+            return [self layoutStrategyForValues:@[
+                values[validProperties[0]] ?: @0,
+                values[validProperties[1]] ?: @0
+            ]];
         }];
+}
+
++ (FLXLayoutStrategy *)layoutStrategyForValues:(NSArray *)values {
+    return [FLXLayoutStrategy relative:^CGSize(CGSize containerSize) {
+        return (CGSize){
+            .width = [self layoutStrategyComponentForValue:values[0] containerSize:containerSize],
+            .height = [self layoutStrategyComponentForValue:values[1] containerSize:containerSize]
+        };
+    }];
+}
+
++ (CGFloat)layoutStrategyComponentForValue:(id)value containerSize:(CGSize)containerSize {
+    if ([value isKindOfClass:NSNumber.class]) {
+        return [(NSNumber *)value floatValue];
+    }
+
+    if ([value isKindOfClass:NSString.class]) {
+        NSExpression *expression = [NSExpression expressionWithFormat:(NSString *)value];
+
+        NSDictionary *object = @{
+            @"containerWidth": @(containerSize.width),
+            @"containerHeight": @(containerSize.height)
+        };
+
+        return [[expression
+            expressionValueWithObject:object context:nil]
+            floatValue];
+    }
+
+    return 0.0f;
 }
 
 @end
 
+NSString * const MTFFLXLayoutStrategyFromStringTransformerName = @"MTFFLXLayoutStrategyFromStringTransformerName";
+
 NSString * const MTFFLXLayoutStrategyFromArrayTransformerName = @"MTFFLXLayoutStrategyFromArrayTransformerName";
 
 NSString * const MTFFLXLayoutStrategyFromDictionaryTransformerName = @"MTFFLXLayoutStrategyFromDictionaryTransformerName";
+
+NS_ASSUME_NONNULL_END

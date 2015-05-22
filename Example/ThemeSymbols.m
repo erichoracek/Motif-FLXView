@@ -11,12 +11,12 @@ const struct ThemeClassNames ThemeClassNames = {
 
 const struct ThemeProperties ThemeProperties = {
     .backgroundColor = @"backgroundColor",
-    .childAlignment = @"childAlignment",
     .childClass = @"childClass",
     .direction = @"direction",
     .layoutStrategy = @"layoutStrategy",
     .margins = @"margins",
     .numberOfChildren = @"numberOfChildren",
     .padding = @"padding",
+    .selfAlignment = @"selfAlignment",
     .wrap = @"wrap",
 };
