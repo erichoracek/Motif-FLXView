@@ -13,6 +13,12 @@
 @end
 
 /**
+ The name of the value transformer responsible for transforming an NSNumber to
+ an FLXLayoutStrategy.
+ */
+extern NSString * const MTFFLXLayoutStrategyFromNumberTransformerName;
+
+/**
  The name of the value transformer responsible for transforming an NSString to
  an FLXLayoutStrategy.
  */

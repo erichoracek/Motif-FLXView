@@ -24,67 +24,52 @@
             view.flx_flex = value.floatValue;
         }];
 
+    NSString *layoutStrategyPropertyName = @"layoutStrategy";
+    void(^layoutStrategyApplierBlock)(FLXLayoutStrategy *, UIView *) = ^(FLXLayoutStrategy *value, UIView *view) {
+        NSString *key = NSStringFromSelector(@selector(flx_layoutStrategy));
+        [view setValue:value forKey:key];
+    };
+
     [self
-        mtf_registerThemeProperty:@"layoutStrategy"
-        requiringValueOfClass:NSNumber.class
-        applierBlock:^(NSNumber *value, UIView *view){
-            view.flx_layoutStrategy = [FLXLayoutStrategy fixed:(CGSize){
-                .width = value.floatValue,
-                .height = value.floatValue
-            }];
-        }];
-        
+        mtf_registerThemeProperty:layoutStrategyPropertyName
+        valueTransformerName:MTFFLXLayoutStrategyFromNumberTransformerName
+        applierBlock:layoutStrategyApplierBlock];
+
     [self
-        mtf_registerThemeProperty:@"layoutStrategy"
+        mtf_registerThemeProperty:layoutStrategyPropertyName
         valueTransformerName:MTFFLXLayoutStrategyFromStringTransformerName
-        applierBlock:^(FLXLayoutStrategy *value, UIView *view){
-            NSString *key = NSStringFromSelector(@selector(flx_layoutStrategy));
-            [view setValue:value forKey:key];
-        }];
+        applierBlock:layoutStrategyApplierBlock];
 
     [self
-        mtf_registerThemeProperty:@"layoutStrategy"
+        mtf_registerThemeProperty:layoutStrategyPropertyName
         valueTransformerName:MTFFLXLayoutStrategyFromArrayTransformerName
-        applierBlock:^(FLXLayoutStrategy *value, UIView *view){
-            NSString *key = NSStringFromSelector(@selector(flx_layoutStrategy));
-            [view setValue:value forKey:key];
-        }];
+        applierBlock:layoutStrategyApplierBlock];
 
     [self
-        mtf_registerThemeProperty:@"layoutStrategy"
+        mtf_registerThemeProperty:layoutStrategyPropertyName
         valueTransformerName:MTFFLXLayoutStrategyFromDictionaryTransformerName
-        applierBlock:^(FLXLayoutStrategy *value, UIView *view){
-            NSString *key = NSStringFromSelector(@selector(flx_layoutStrategy));
-            [view setValue:value forKey:key];
-        }];
+        applierBlock:layoutStrategyApplierBlock];
+
+    NSString *marginsPropertyName = @"margins";
+    void(^marginsApplierBlock)(NSValue *, UIView *) = ^(NSValue *value, UIView *view) {
+        NSString *key = NSStringFromSelector(@selector(flx_margins));
+        [view setValue:value forKey:key];
+    };
 
     [self
-        mtf_registerThemeProperty:@"margins"
-        requiringValueOfClass:NSNumber.class
-        applierBlock:^(NSNumber *marginValue, UIView *view){
-            view.flx_margins = (FLXMargins){
-                .top = marginValue.floatValue,
-                .left = marginValue.floatValue,
-                .bottom = marginValue.floatValue,
-                .right = marginValue.floatValue,
-            };
-        }];
+        mtf_registerThemeProperty:marginsPropertyName
+        valueTransformerName:MTFFLXMarginsFromNumberTransformerName
+        applierBlock:marginsApplierBlock];
 
     [self
-        mtf_registerThemeProperty:@"margins"
+        mtf_registerThemeProperty:marginsPropertyName
         valueTransformerName:MTFFLXMarginsFromDictionaryTransformerName
-        applierBlock:^(NSValue *value, UIView *view){
-            NSString *key = NSStringFromSelector(@selector(flx_margins));
-            [view setValue:value forKey:key];
-        }];
+        applierBlock:marginsApplierBlock];
 
     [self
-        mtf_registerThemeProperty:@"margins"
+        mtf_registerThemeProperty:marginsPropertyName
         valueTransformerName:MTFFLXMarginsFromArrayTransformerName
-        applierBlock:^(NSValue *value, UIView *view){
-            NSString *key = NSStringFromSelector(@selector(flx_margins));
-            [view setValue:value forKey:key];
-        }];
+        applierBlock:marginsApplierBlock];
 
     [self
         mtf_registerThemeProperty:@"marginTop"

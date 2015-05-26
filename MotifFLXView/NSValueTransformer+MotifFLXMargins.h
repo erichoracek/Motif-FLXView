@@ -13,6 +13,12 @@
 @end
 
 /**
+ The name of the value transformer responsible for transforming an NSNumber to
+ a NSValue wrapping a FLXMargins struct.
+ */
+extern NSString * const MTFFLXMarginsFromNumberTransformerName;
+
+/**
  The name of the value transformer responsible for transforming an NSArray to
  a NSValue wrapping a FLXMargins struct.
  */

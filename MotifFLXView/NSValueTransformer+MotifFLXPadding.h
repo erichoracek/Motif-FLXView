@@ -13,6 +13,12 @@
 @end
 
 /**
+ The name of the value transformer responsible for transforming an NSNumber to
+ a NSValue wrapping a FLXPadding struct.
+ */
+extern NSString * const MTFFLXPaddingFromNumberTransformerName;
+
+/**
  The name of the value transformer responsible for transforming an NSArray to
  a NSValue wrapping a FLXPadding struct.
  */

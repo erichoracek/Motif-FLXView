@@ -45,34 +45,6 @@
        }];
 
     [self
-        mtf_registerThemeProperty:@"padding"
-        requiringValueOfClass:NSNumber.class
-        applierBlock:^(NSNumber *value, FLXView *view){
-            view.padding = (FLXPadding){
-                .top = value.floatValue,
-                .left = value.floatValue,
-                .bottom = value.floatValue,
-                .right = value.floatValue,
-            };
-        }];
-
-    [self
-        mtf_registerThemeProperty:@"padding"
-        valueTransformerName:MTFFLXPaddingFromDictionaryTransformerName
-        applierBlock:^(NSValue *value, UIView *view){
-            NSString *key = NSStringFromSelector(@selector(padding));
-            [view setValue:value forKey:key];
-        }];
-
-    [self
-        mtf_registerThemeProperty:@"padding"
-        valueTransformerName:MTFFLXPaddingFromArrayTransformerName
-        applierBlock:^(NSValue *value, UIView *view){
-            NSString *key = NSStringFromSelector(@selector(padding));
-            [view setValue:value forKey:key];
-        }];
-
-    [self
         mtf_registerThemeProperty:@"paddingTop"
         requiringValueOfClass:NSNumber.class
         applierBlock:^(NSNumber *value, FLXView *view){

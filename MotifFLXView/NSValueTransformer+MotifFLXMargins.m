@@ -15,6 +15,21 @@
 
 + (void)load {
     [self
+        mtf_registerValueTransformerWithName:MTFFLXMarginsFromNumberTransformerName
+        transformedValueObjCType:@encode(FLXMargins)
+        reverseTransformedValueClass:NSNumber.class
+        returningTransformedValueWithBlock:^(NSNumber *value) {
+            FLXMargins margins = {
+                .top = value.floatValue,
+                .left = value.floatValue,
+                .bottom = value.floatValue,
+                .right = value.floatValue,
+            };
+
+            return [NSValue value:&margins withObjCType:@encode(FLXMargins)];
+        }];
+
+    [self
         mtf_registerValueTransformerWithName:MTFFLXMarginsFromArrayTransformerName
         transformedValueObjCType:@encode(FLXMargins)
         reverseTransformedValueClass:NSArray.class
@@ -81,6 +96,8 @@
 }
 
 @end
+
+NSString * const MTFFLXMarginsFromNumberTransformerName = @"MTFFLXMarginsFromNumberTransformerName";
 
 NSString * const MTFFLXMarginsFromArrayTransformerName = @"MTFFLXMarginsFromArrayTransformerName";
 

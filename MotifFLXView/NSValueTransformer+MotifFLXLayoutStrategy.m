@@ -17,6 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)load {
     [self
+        mtf_registerValueTransformerWithName:MTFFLXLayoutStrategyFromNumberTransformerName
+        transformedValueClass:FLXLayoutStrategy.class
+        reverseTransformedValueClass:NSNumber.class
+        returningTransformedValueWithBlock:^(NSNumber *value) {
+            return [self layoutStrategyForValues:@[value, value]];
+        }];
+
+    [self
         mtf_registerValueTransformerWithName:MTFFLXLayoutStrategyFromStringTransformerName
         transformedValueClass:FLXLayoutStrategy.class
         reverseTransformedValueClass:NSString.class
@@ -89,6 +97,8 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 @end
+
+NSString * const MTFFLXLayoutStrategyFromNumberTransformerName = @"MTFFLXLayoutStrategyFromNumberTransformerName";
 
 NSString * const MTFFLXLayoutStrategyFromStringTransformerName = @"MTFFLXLayoutStrategyFromStringTransformerName";
 

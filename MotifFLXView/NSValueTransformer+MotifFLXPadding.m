@@ -15,6 +15,21 @@
 
 + (void)load {
     [self
+        mtf_registerValueTransformerWithName:MTFFLXPaddingFromNumberTransformerName
+        transformedValueObjCType:@encode(FLXPadding)
+        reverseTransformedValueClass:NSNumber.class
+        returningTransformedValueWithBlock:^(NSNumber *value) {
+            FLXPadding padding = {
+                .top = value.floatValue,
+                .left = value.floatValue,
+                .bottom = value.floatValue,
+                .right = value.floatValue,
+            };
+
+            return [NSValue value:&padding withObjCType:@encode(FLXPadding)];
+        }];
+
+    [self
         mtf_registerValueTransformerWithName:MTFFLXPaddingFromArrayTransformerName
         transformedValueObjCType:@encode(FLXPadding)
         reverseTransformedValueClass:NSArray.class
@@ -81,6 +96,8 @@
 }
 
 @end
+
+NSString * const MTFFLXPaddingFromNumberTransformerName = @"MTFFLXPaddingFromNumberTransformerName";
 
 NSString * const MTFFLXPaddingFromArrayTransformerName = @"MTFFLXPaddingFromArrayTransformerName";
 
