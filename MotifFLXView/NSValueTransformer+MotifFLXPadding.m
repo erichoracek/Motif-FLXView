@@ -37,7 +37,7 @@
             NSAssert(values.count <= 4, @"Padding array must have at most four values");
             NSAssert(values.count > 1, @"Padding array must have more than one value");
 
-            for (id value in values) {
+            for (__unused id value in values) {
                 NSAssert(
                     [value isKindOfClass:NSNumber.class],
                     @"Padding array values must be kind of class NSNumber");
@@ -68,7 +68,7 @@
         transformedValueObjCType:@encode(FLXPadding)
         reverseTransformedValueClass:NSDictionary.class
         returningTransformedValueWithBlock:^NSValue *(NSDictionary *values) {
-            for (id value in [values objectEnumerator]) {
+            for (__unused id value in [values objectEnumerator]) {
                 NSAssert(
                     [value isKindOfClass:NSNumber.class],
                     @"Padding dictionary values must be kind of class NSNumber");
