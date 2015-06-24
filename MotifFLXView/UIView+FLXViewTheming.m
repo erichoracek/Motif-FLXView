@@ -32,22 +32,22 @@
 
     [self
         mtf_registerThemeProperty:layoutStrategyPropertyName
-        valueTransformerName:MTFFLXLayoutStrategyFromNumberTransformerName
+        requiringValueOfClass:FLXLayoutStrategy.class
         applierBlock:layoutStrategyApplierBlock];
 
     [self
         mtf_registerThemeProperty:layoutStrategyPropertyName
-        valueTransformerName:MTFFLXLayoutStrategyFromStringTransformerName
+        requiringValueOfClass:FLXLayoutStrategy.class
         applierBlock:layoutStrategyApplierBlock];
 
     [self
         mtf_registerThemeProperty:layoutStrategyPropertyName
-        valueTransformerName:MTFFLXLayoutStrategyFromArrayTransformerName
+        requiringValueOfClass:FLXLayoutStrategy.class
         applierBlock:layoutStrategyApplierBlock];
 
     [self
         mtf_registerThemeProperty:layoutStrategyPropertyName
-        valueTransformerName:MTFFLXLayoutStrategyFromDictionaryTransformerName
+        requiringValueOfClass:FLXLayoutStrategy.class
         applierBlock:layoutStrategyApplierBlock];
 
     NSString *marginsPropertyName = @"margins";
@@ -58,17 +58,17 @@
 
     [self
         mtf_registerThemeProperty:marginsPropertyName
-        valueTransformerName:MTFFLXMarginsFromNumberTransformerName
+        requiringValueOfObjCType:@encode(FLXMargins)
         applierBlock:marginsApplierBlock];
 
     [self
         mtf_registerThemeProperty:marginsPropertyName
-        valueTransformerName:MTFFLXMarginsFromDictionaryTransformerName
+        requiringValueOfObjCType:@encode(FLXMargins)
         applierBlock:marginsApplierBlock];
 
     [self
         mtf_registerThemeProperty:marginsPropertyName
-        valueTransformerName:MTFFLXMarginsFromArrayTransformerName
+        requiringValueOfObjCType:@encode(FLXMargins)
         applierBlock:marginsApplierBlock];
 
     [self

@@ -1,4 +1,4 @@
-// WARNING: Do not modify. This file is machine-generated from 'Theme.json'.
+// WARNING: Do not modify. This file is machine-generated from 'Theme.yaml'.
 
 #import "ThemeSymbols.h"
 
@@ -13,10 +13,10 @@ const struct ThemeProperties ThemeProperties = {
     .backgroundColor = @"backgroundColor",
     .childClass = @"childClass",
     .direction = @"direction",
+    .justification = @"justification",
     .layoutStrategy = @"layoutStrategy",
     .margins = @"margins",
     .numberOfChildren = @"numberOfChildren",
     .padding = @"padding",
-    .selfAlignment = @"selfAlignment",
     .wrap = @"wrap",
 };

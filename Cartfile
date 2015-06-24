@@ -1,2 +1,2 @@
 github "robb/FLXView" "master"
-github "erichoracek/Motif" "master"
+github "erichoracek/Motif" ~> 0.2.0

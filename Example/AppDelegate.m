@@ -33,7 +33,7 @@
 
 - (MTFDynamicThemeApplier *)createDynamicThemeApplier {
     NSError *error;
-    MTFTheme *theme = [MTFTheme themeFromJSONThemeNamed:ThemeName error:&error];
+    MTFTheme *theme = [MTFTheme themeFromFileNamed:ThemeName error:&error];
     NSAssert(error == nil, @"Error loading theme %@", error);
 
     MTFLiveReloadThemeApplier *themeApplier = [[MTFLiveReloadThemeApplier alloc]

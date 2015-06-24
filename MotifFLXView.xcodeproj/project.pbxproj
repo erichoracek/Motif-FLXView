@@ -26,10 +26,10 @@
 		3A3D20851B09CAA100224121 /* FLXView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4F88841B03D067009B2917 /* FLXView.framework */; };
 		3A3D20861B09CAA100224121 /* FLXView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4F88841B03D067009B2917 /* FLXView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A3D20891B09CAA500224121 /* MotifFLXView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4F88681B03A2CF009B2917 /* MotifFLXView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3A3D208D1B09CB6300224121 /* Theme.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A3D208C1B09CB6300224121 /* Theme.json */; };
 		3A3D20911B09CB8A00224121 /* ThemeSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D20901B09CB8A00224121 /* ThemeSymbols.m */; };
 		3A3D20941B09CDBE00224121 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D20931B09CDBE00224121 /* View.m */; };
 		3A3D20971B09CF7700224121 /* UIView+Theming.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D20961B09CF7700224121 /* UIView+Theming.m */; };
+		3A423F501B3B0C1E00B8B33E /* Theme.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 3A423F4F1B3B0C1E00B8B33E /* Theme.yaml */; };
 		3A4F886E1B03A2CF009B2917 /* MotifFLXView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4F886D1B03A2CF009B2917 /* MotifFLXView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A4F88741B03A2CF009B2917 /* MotifFLXView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4F88681B03A2CF009B2917 /* MotifFLXView.framework */; };
 		3A4F88851B03D067009B2917 /* FLXView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4F88841B03D067009B2917 /* FLXView.framework */; };
@@ -108,13 +108,13 @@
 		3A3D20651B09CA5300224121 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3A3D20661B09CA5300224121 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3A3D206E1B09CA5300224121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		3A3D208C1B09CB6300224121 /* Theme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Theme.json; sourceTree = "<group>"; };
 		3A3D208F1B09CB8A00224121 /* ThemeSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeSymbols.h; sourceTree = "<group>"; };
 		3A3D20901B09CB8A00224121 /* ThemeSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeSymbols.m; sourceTree = "<group>"; };
 		3A3D20921B09CDBE00224121 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		3A3D20931B09CDBE00224121 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
 		3A3D20951B09CF7700224121 /* UIView+Theming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Theming.h"; sourceTree = "<group>"; };
 		3A3D20961B09CF7700224121 /* UIView+Theming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Theming.m"; sourceTree = "<group>"; };
+		3A423F4F1B3B0C1E00B8B33E /* Theme.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Theme.yaml; sourceTree = "<group>"; };
 		3A4F88681B03A2CF009B2917 /* MotifFLXView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MotifFLXView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4F886C1B03A2CF009B2917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A4F886D1B03A2CF009B2917 /* MotifFLXView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotifFLXView.h; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		3A3D205D1B09CA5300224121 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				3A3D208C1B09CB6300224121 /* Theme.json */,
+				3A423F4F1B3B0C1E00B8B33E /* Theme.yaml */,
 				3A3D208F1B09CB8A00224121 /* ThemeSymbols.h */,
 				3A3D20901B09CB8A00224121 /* ThemeSymbols.m */,
 				3A3D20621B09CA5300224121 /* AppDelegate.h */,
@@ -404,7 +404,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A3D208D1B09CB6300224121 /* Theme.json in Resources */,
+				3A423F501B3B0C1E00B8B33E /* Theme.yaml in Resources */,
 				3A3D206F1B09CA5300224121 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +437,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/usr/local/bin\"\nexport CLI_TOOL='motif'\n\nwhich \"${CLI_TOOL}\"\n\nif [ $? -ne 0  ]; then exit 0; fi\n\nexport THEMES_DIR=\"${SRCROOT}/${PRODUCT_NAME}\"\n\nfind \"${THEMES_DIR}\" -name '*Theme.json' |  sed 's/^/-t /' | xargs \"${CLI_TOOL}\" -o \"${THEMES_DIR}\"";
+			shellScript = "export PATH=\"$PATH:/usr/local/bin\"\nexport CLI_TOOL='motif'\n\nwhich \"${CLI_TOOL}\"\n\nif [ $? -ne 0  ]; then exit 0; fi\n\nexport THEMES_DIR=\"${SRCROOT}/${PRODUCT_NAME}\"\n\nfind \"${THEMES_DIR}\" -name '*Theme.yaml' |  sed 's/^/-t /' | xargs \"${CLI_TOOL}\" -o \"${THEMES_DIR}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

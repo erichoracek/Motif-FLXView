@@ -15,7 +15,7 @@
 + (void)load {
     [self
         mtf_registerThemeProperty:@"backgroundColor"
-        valueTransformerName:MTFColorFromStringTransformerName
+        requiringValueOfClass:UIColor.class
         applierBlock:^(UIColor *color, UIView *view){
             view.backgroundColor = color;
         }];

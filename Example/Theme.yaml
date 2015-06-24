@@ -1,0 +1,15 @@
+.Parent:
+    backgroundColor: lightblue
+    childClass: .Child
+    padding: {top: 20, left: 10, right: 10, bottom: 10}
+    direction: row
+    wrap: true
+    numberOfChildren: 4
+    justification: spaceBetween
+
+.Child:
+    backgroundColor: blue
+    layoutStrategy:
+        width: containerWidth * 0.5 - (20 + 10)
+        height: containerHeight * 0.5 - (20 + 50) / 2.0
+    margins: 10
