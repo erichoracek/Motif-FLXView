@@ -4,12 +4,13 @@
     padding: {top: 20, left: 10, right: 10, bottom: 10}
     direction: row
     wrap: true
-    numberOfChildren: 4
-    justification: spaceBetween
+    numberOfChildren: 9
+    justification: center
+    childAlignment: center
 
 .Child:
     backgroundColor: blue
     layoutStrategy:
-        width: containerWidth * 0.5 - (20 + 10)
-        height: containerHeight * 0.5 - (20 + 50) / 2.0
+        width: 50
+        height: 20
     margins: 10

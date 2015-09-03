@@ -11,6 +11,7 @@ extern const struct ThemeClassNames {
 
 extern const struct ThemeProperties {
     __unsafe_unretained NSString *backgroundColor;
+    __unsafe_unretained NSString *childAlignment;
     __unsafe_unretained NSString *childClass;
     __unsafe_unretained NSString *direction;
     __unsafe_unretained NSString *justification;

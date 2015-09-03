@@ -11,6 +11,7 @@ const struct ThemeClassNames ThemeClassNames = {
 
 const struct ThemeProperties ThemeProperties = {
     .backgroundColor = @"backgroundColor",
+    .childAlignment = @"childAlignment",
     .childClass = @"childClass",
     .direction = @"direction",
     .justification = @"justification",
